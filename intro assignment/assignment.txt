@@ -1,0 +1,29 @@
+python -m pip install Pillow
+Python 3.6.2 (v3.6.2:5fd33b5, Jul  8 2017, 04:14:34) [MSC v.1900 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from PIL import Image
+>>> import urllib.request
+>>> import io
+>>> URL = 'http://www.w3schools.com/css/trolltunga.jpg'
+>>> f = io.BytesIO(urllib.request.urlopen(URL).read())
+>>> img = Image.open(f)
+>>> img.show()
+C:\Users\rayya\AppData\Local\Temp\tmpl947ffft.BMP
+The process cannot access the file because it is being used by another process.
+>>> print(img.size)
+(1000, 300)
+# width, height
+>>> pix = img.load()
+>>> print(pix[2,5])
+#x, y
+(24, 29, 61)
+>>>
+
+######
+if range in bottom 3rd: 0
+if top 3rd: 254
+else: 127
+for all components
+
+cmd line arg is url
+######

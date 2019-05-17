@@ -1,0 +1,90 @@
+Supervised learning
+testing set - set of points that are classified prior to
+passing through the neural network
+
+Unsupervised learning
+We don't set how the points should be classified ahead of time.
+e.g. points within 2d space -  you could find the mean of the
+points. Or, if there are two blobs of points, then how do you
+classify which blob each point belongs to? You can find the mean
+of each blob, then whichever mean the point is closer to is which
+blob it belongs to. But how do you determine the mean? How do
+you know how many means there are?
+
+Problem: K means
+algorithm which determines the k means necessary to minimize the
+error. Error - sum of the squares of the distances of each point
+from its mean. Theoretically, this problem is NP difficulty.
+
+Algorithm is straightforward to understand.
+1. Find k starting means -- just values -- pick randomly from
+S (S = set of points we want to classify).
+2. For each point in S, decide which of the K means it is closest
+to and put it in that group. (most time consuming step)
+3. Once you have those groups, find the mean for each one of
+those groups. These become the new means.
+4. Stop looping when no points switch between groups.
+
+This is the lab. The input will be K and an image file.
+Rather than find the means of points, you find the K means of
+the colors in the entire image, then repaint the image with only
+these K colors. The pixels have three RBG values, so you're working
+in three dimensional space. Once you have the K means, you have to
+double check the image. If a pixel is surrounded by a different
+color, you change its color to that.
+
+Once you have cleaned up the image, the next part is to figure out
+where the chess board actually is. You may use a Huff transform.
+The image will be either a file or a url which you will detect.
+
+________________________________________________________________
+5/17
+
+inputs: K and either a file or a URL
+order on the command line is not guaranteed, use regex
+
+Output: (example)
+Size: 476 x 446 (20 pts)
+Pixels: 212296 (10 pts)
+Distinct pixel count: 51044 (10 pts) (distinct colors)
+Most common pixel: (234, 224, 212) => 595 (20 pts)
+random means: [(r, g, b), (r, g, b), (r, g, b)] (10 pts)
+
+Final means:
+1: (r, g, b) => how many
+2: (r, g, b) => how many
+
+Distinct regions:
+1: 2
+2: 2
+3: 2
+4: 1
+
+Final regions: (eliminate incorrectly labeled regions)
+1: 2
+2: 2
+3: 1
+4: 1
+
+save and output file as username.png in a subdirectory kMeans/2019rkhan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
